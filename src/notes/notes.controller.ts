@@ -26,12 +26,12 @@ export class NotesController {
         return this.notesService.insertNote(createNoteDto);
     }
 
-    @Get('1: id')
+    @Get(':id')
     async getNote(@Param('id') id: string) {
         return this.notesService.getNote(id);
     }
 
-    @Patch(': id')
+    @Patch(':id')
     async updateNote(
         @Param('id') id: string,
         @Body() updateNoteDto: UpdateNoteDto,
@@ -39,7 +39,7 @@ export class NotesController {
         return this.notesService.updateNote(id, updateNoteDto);
     }
 
-    @Delete(': id')
+    @Delete(':id')
     async deleteNote(@Param('id') id: string) {
         return this.notesService.deleteNote(id);
     }
