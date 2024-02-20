@@ -13,6 +13,6 @@ export const CategorySchema = new mongoose.Schema({
 })
 
 export interface ICategory extends mongoose.Document{
-    title: string,
+    name: string,
     status: boolean
 }
