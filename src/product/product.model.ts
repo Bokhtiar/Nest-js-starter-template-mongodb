@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose'
-
+import { Schema } from "mongoose";
 export const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -9,6 +9,12 @@ export const ProductSchema = new mongoose.Schema({
     price: {
         type: Number,
         require: true,
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        trim: true,
+        ref: "Category",
+        required: true
     },
     body: {
         type: String,
